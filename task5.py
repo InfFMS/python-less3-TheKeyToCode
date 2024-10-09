@@ -3,3 +3,26 @@
 # которые являются степенями числа 2.
 # Вывести "нет", если таких чисел нет.
 
+def is_stepen_of_2(n):
+    if(n<0):
+        return False
+    while n!=1:
+        if n%2==0:
+            n=n/2
+        else:
+            if(n!=1):
+                return False
+    return True
+
+i = int(input("Введите число: "))
+summ = 0
+count = 0
+while i!=0:
+    if is_stepen_of_2(i):
+        summ+=i
+        count+=1
+    i = int(input("Введите число: "))
+if(count == 0):
+    print("Нет чисел удовлетворяющих условиюю: Число должно быть степенью двойки")
+else:
+    print("Среднее арифметическое чисел являющихся степенями 2 равно " + str(summ/count))
